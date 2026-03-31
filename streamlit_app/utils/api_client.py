@@ -6,7 +6,8 @@ import requests
 from typing import Optional, List, Dict, Any
 import streamlit as st
 
-API_BASE_URL = os.environ.get("API_BASE_URL", "http://localhost:8000")
+# Correctly point to your Production Render Backend ✨
+API_BASE_URL = os.environ.get("API_BASE_URL", "https://talent-iq-api-z8zx.onrender.com")
 
 
 def _headers(token: Optional[str] = None) -> dict:

@@ -26,10 +26,11 @@ class Settings(BaseSettings):
     CELERY_RESULT_BACKEND: str = "redis://redis:6379/1"
 
     # FastAPI backend URL (used by Streamlit)
-    API_BASE_URL: str = "http://api:8000"
+    # UPDATED: Points to your production Render API by default ✨
+    API_BASE_URL: str = "https://talent-iq-api-z8zx.onrender.com"
 
     # Feature flags
-    ENABLE_GEMINI: bool = False
+    ENABLE_GEMINI: bool = True
     GEMINI_API_KEY: Optional[str] = None
     GEMINI_MODEL: str = "gemini-1.5-flash"
 
