@@ -1,7 +1,7 @@
 from pydantic_settings import BaseSettings
+from pydantic import field_validator
 from functools import lru_cache
 from typing import Optional
-
 
 class Settings(BaseSettings):
     # App
@@ -12,7 +12,13 @@ class Settings(BaseSettings):
 
     # Database
     DATABASE_URL: str = "postgresql+asyncpg://talent:talent123@db:5432/talentdb"
-    DATABASE_URL_SYNC: str = "postgresql://talent:talent123@db:5432/talentdb"
+
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def fix_database_url(cls, v: str) -> str:
+        if v and v.startswith("postgresql://"):
+            return v.replace("postgresql://", "postgresql+asyncpg://", 1)
+        return v
 
     # Redis / Celery
     REDIS_URL: str = "redis://redis:6379/0"
@@ -38,10 +44,8 @@ class Settings(BaseSettings):
         env_file = ".env"
         env_file_encoding = "utf-8"
 
-
 @lru_cache()
 def get_settings() -> Settings:
     return Settings()
-
 
 settings = get_settings()
