@@ -40,8 +40,10 @@ def show_resume_upload():
 
                 try:
                     res = api_client.upload_resumes(selected_job_id, files_payload)
-                    st.success(f"Successfully processed {res['processed']} files.")
-                    st.session_state.upload_results = res.get("results", [])
+                    st.success(f"🚀 Queued {len(uploaded_files)} files for background processing!")
+                    st.info("The AI is now parsing and matching these resumes. Please wait about 30-60 seconds, then refresh the candidate pipeline.")
+                    
+                    st.session_state.upload_results = [] # Results will come later in the DB
                     st.session_state.active_tab = "candidates"
                     st.session_state.selected_job_id = selected_job_id
                     st.rerun()

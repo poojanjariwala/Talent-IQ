@@ -51,35 +51,49 @@ async def upload_resumes(
     db: AsyncSession = Depends(get_db),
     background_tasks: BackgroundTasks = BackgroundTasks(),
 ):
-    """Upload one or more resume files for a given job."""
+    # Verify job exists
     job_repo = JobRepository(db)
     job = await job_repo.get_by_id(job_id)
     if not job or job.recruiter_id != recruiter.id:
         raise HTTPException(status_code=404, detail="Job not found")
 
-    results = []
-    for f in files:
-        # Use nested transaction (savepoint) to isolate EACH file.
-        # If one fails, the session remains healthy for the next.
-        async with db.begin_nested():
+    # Helper for background processing with its own DB session
+    async def process_in_background(filename, content, job_id, recruiter_id, mime):
+        from app.database import AsyncSessionLocal
+        from app.services.pipeline import process_resume
+        async with AsyncSessionLocal() as db:
             try:
-                content = await f.read()
-                raw_text = clean_text(extract_text(f.filename, content))
-                result = await process_resume(
+                await process_resume(
                     db, 
-                    raw_text, 
+                    clean_text(extract_text(filename, content)), 
                     job_id, 
-                    recruiter.id, 
-                    f.filename,
+                    recruiter_id, 
+                    filename,
                     resume_bytes=content,
-                    resume_mime=f.content_type
+                    resume_mime=mime
                 )
-                results.append({"filename": f.filename, **result})
             except Exception as e:
-                # Rollback this sub-transaction (automatic by begin_nested context manager)
-                results.append({"filename": f.filename, "status": "failed", "error": str(e)})
+                print(f"ERROR: Background processing failed for {filename}: {e}")
 
-    return {"processed": len(results), "results": results}
+    for f in files:
+        try:
+            content = await f.read()
+            # Queue the processing in background
+            background_tasks.add_task(
+                process_in_background,
+                f.filename,
+                content,
+                job_id,
+                recruiter.id,
+                f.content_type
+            )
+        except Exception as e:
+            print(f"ERROR: Initial upload step failed for {f.filename}: {e}")
+
+    return {
+        "processed": len(files), 
+        "message": f"Successfully queued {len(files)} files for background processing. They will appear in the pipeline shortly."
+    }
 
 
 @router.get("/{candidate_id}/download")
