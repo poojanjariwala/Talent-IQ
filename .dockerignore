@@ -1,0 +1,22 @@
+# Ignore everything that shouldn't be in the container
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+.gitignore
+.dockerignore
+.git/
+.gemini/
+postgres_data/
+redis_data/
+README.md
+LICENSE
+.vscode/
+.idea/
+tests/
+docs/
+docker-compose.yml
+docker-compose.override.yml
+*.log
+.DS_Store

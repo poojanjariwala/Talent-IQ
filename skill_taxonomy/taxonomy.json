@@ -1,0 +1,356 @@
+{
+  "Python": {
+    "category": "Programming Language",
+    "aliases": ["python3", "py", "python 3", "python2"],
+    "related_skills": ["Django", "FastAPI", "Flask", "Pandas", "NumPy"],
+    "infer_if_present": ["pip", "virtualenv"]
+  },
+  "JavaScript": {
+    "category": "Programming Language",
+    "aliases": ["js", "javascript es6", "es6", "ecmascript", "vanilla js", "node", "nodejs"],
+    "related_skills": ["React", "Vue", "Angular", "TypeScript", "Node.js"],
+    "infer_if_present": []
+  },
+  "TypeScript": {
+    "category": "Programming Language",
+    "aliases": ["ts", "typescript"],
+    "related_skills": ["JavaScript", "React", "Angular", "Node.js"],
+    "infer_if_present": ["JavaScript"]
+  },
+  "Java": {
+    "category": "Programming Language",
+    "aliases": ["java8", "java 8", "java11", "java 11", "java 17"],
+    "related_skills": ["Spring Boot", "Maven", "Gradle", "Hibernate"],
+    "infer_if_present": []
+  },
+  "Go": {
+    "category": "Programming Language",
+    "aliases": ["golang", "go lang"],
+    "related_skills": ["Docker", "Kubernetes", "gRPC"],
+    "infer_if_present": []
+  },
+  "Rust": {
+    "category": "Programming Language",
+    "aliases": ["rust-lang"],
+    "related_skills": [],
+    "infer_if_present": []
+  },
+  "C++": {
+    "category": "Programming Language",
+    "aliases": ["cpp", "c plus plus", "c++14", "c++17"],
+    "related_skills": ["C", "CMake"],
+    "infer_if_present": []
+  },
+  "C#": {
+    "category": "Programming Language",
+    "aliases": ["csharp", "c sharp", ".net c#"],
+    "related_skills": [".NET", "ASP.NET", "Unity"],
+    "infer_if_present": []
+  },
+  "PHP": {
+    "category": "Programming Language",
+    "aliases": ["php7", "php8", "php 7", "php 8"],
+    "related_skills": ["Laravel", "WordPress", "Symfony"],
+    "infer_if_present": []
+  },
+  "Ruby": {
+    "category": "Programming Language",
+    "aliases": ["ruby on rails", "ror"],
+    "related_skills": ["Rails", "Sinatra"],
+    "infer_if_present": []
+  },
+  "Swift": {
+    "category": "Programming Language",
+    "aliases": ["swift 5"],
+    "related_skills": ["iOS", "Xcode", "SwiftUI"],
+    "infer_if_present": []
+  },
+  "Kotlin": {
+    "category": "Programming Language",
+    "aliases": ["kotlin android"],
+    "related_skills": ["Android", "Jetpack Compose"],
+    "infer_if_present": []
+  },
+  "R": {
+    "category": "Programming Language",
+    "aliases": ["r programming", "r language"],
+    "related_skills": ["ggplot2", "tidyverse", "R Shiny"],
+    "infer_if_present": []
+  },
+  "Scala": {
+    "category": "Programming Language",
+    "aliases": [],
+    "related_skills": ["Apache Spark", "Akka", "Play Framework"],
+    "infer_if_present": []
+  },
+  "React": {
+    "category": "Frontend Framework",
+    "aliases": ["reactjs", "react.js", "react js", "react hooks", "next.js", "nextjs"],
+    "related_skills": ["JavaScript", "TypeScript", "Redux", "HTML", "CSS"],
+    "infer_if_present": ["JavaScript", "HTML", "CSS"]
+  },
+  "Vue": {
+    "category": "Frontend Framework",
+    "aliases": ["vuejs", "vue.js", "vue 3", "vue3", "nuxt", "nuxt.js"],
+    "related_skills": ["JavaScript", "HTML", "CSS"],
+    "infer_if_present": ["JavaScript"]
+  },
+  "Angular": {
+    "category": "Frontend Framework",
+    "aliases": ["angularjs", "angular.js", "angular 2", "angular 12", "angular 14"],
+    "related_skills": ["TypeScript", "RxJS", "HTML", "CSS"],
+    "infer_if_present": ["TypeScript"]
+  },
+  "Django": {
+    "category": "Backend Framework",
+    "aliases": ["django rest framework", "drf", "django rest"],
+    "related_skills": ["Python", "PostgreSQL", "REST API"],
+    "infer_if_present": ["Python"]
+  },
+  "FastAPI": {
+    "category": "Backend Framework",
+    "aliases": ["fast api"],
+    "related_skills": ["Python", "Pydantic", "REST API", "SQLAlchemy"],
+    "infer_if_present": ["Python"]
+  },
+  "Flask": {
+    "category": "Backend Framework",
+    "aliases": [],
+    "related_skills": ["Python", "REST API"],
+    "infer_if_present": ["Python"]
+  },
+  "Spring Boot": {
+    "category": "Backend Framework",
+    "aliases": ["spring", "spring framework", "spring mvc"],
+    "related_skills": ["Java", "Maven", "Gradle", "REST API"],
+    "infer_if_present": ["Java"]
+  },
+  "Node.js": {
+    "category": "Backend Framework",
+    "aliases": ["nodejs", "node js", "express", "expressjs"],
+    "related_skills": ["JavaScript", "TypeScript", "npm"],
+    "infer_if_present": ["JavaScript"]
+  },
+  "PostgreSQL": {
+    "category": "Database",
+    "aliases": ["postgres", "psql", "postgresql 14", "postgresql 15"],
+    "related_skills": ["SQL", "SQLAlchemy"],
+    "infer_if_present": ["SQL"]
+  },
+  "MySQL": {
+    "category": "Database",
+    "aliases": ["mysql 8", "mariadb"],
+    "related_skills": ["SQL"],
+    "infer_if_present": ["SQL"]
+  },
+  "MongoDB": {
+    "category": "Database",
+    "aliases": ["mongo", "mongoose"],
+    "related_skills": ["NoSQL"],
+    "infer_if_present": []
+  },
+  "Redis": {
+    "category": "Database",
+    "aliases": ["redis cache"],
+    "related_skills": ["Celery", "caching"],
+    "infer_if_present": []
+  },
+  "Elasticsearch": {
+    "category": "Database",
+    "aliases": ["elastic search", "kibana", "elk stack"],
+    "related_skills": ["Logstash", "Kibana"],
+    "infer_if_present": []
+  },
+  "SQL": {
+    "category": "Database",
+    "aliases": ["structured query language", "sql query", "tsql", "plsql"],
+    "related_skills": ["PostgreSQL", "MySQL", "SQLite"],
+    "infer_if_present": []
+  },
+  "Docker": {
+    "category": "DevOps",
+    "aliases": ["docker container", "dockerfile", "docker-compose", "docker compose"],
+    "related_skills": ["Kubernetes", "CI/CD"],
+    "infer_if_present": []
+  },
+  "Kubernetes": {
+    "category": "DevOps",
+    "aliases": ["k8s", "kubectl", "helm"],
+    "related_skills": ["Docker", "CI/CD", "AWS"],
+    "infer_if_present": ["Docker"]
+  },
+  "AWS": {
+    "category": "Cloud",
+    "aliases": ["amazon web services", "amazon aws", "aws ec2", "aws s3", "aws lambda"],
+    "related_skills": ["Docker", "Kubernetes", "CI/CD"],
+    "infer_if_present": []
+  },
+  "GCP": {
+    "category": "Cloud",
+    "aliases": ["google cloud", "google cloud platform", "gcp bigquery"],
+    "related_skills": ["Docker", "Kubernetes"],
+    "infer_if_present": []
+  },
+  "Azure": {
+    "category": "Cloud",
+    "aliases": ["microsoft azure", "azure devops", "azure cloud"],
+    "related_skills": ["Docker", "CI/CD"],
+    "infer_if_present": []
+  },
+  "CI/CD": {
+    "category": "DevOps",
+    "aliases": ["cicd", "continuous integration", "continuous deployment", "github actions", "jenkins", "gitlab ci"],
+    "related_skills": ["Docker", "Git"],
+    "infer_if_present": []
+  },
+  "Git": {
+    "category": "Version Control",
+    "aliases": ["github", "gitlab", "bitbucket", "version control", "git flow"],
+    "related_skills": ["CI/CD"],
+    "infer_if_present": []
+  },
+  "Machine Learning": {
+    "category": "Data Science",
+    "aliases": ["ml", "machine learning algorithms", "ml engineering"],
+    "related_skills": ["Python", "TensorFlow", "PyTorch", "scikit-learn", "Pandas", "NumPy"],
+    "infer_if_present": ["Python"]
+  },
+  "Deep Learning": {
+    "category": "Data Science",
+    "aliases": ["dl", "neural networks", "neural network"],
+    "related_skills": ["TensorFlow", "PyTorch", "Machine Learning"],
+    "infer_if_present": ["Machine Learning"]
+  },
+  "TensorFlow": {
+    "category": "ML Framework",
+    "aliases": ["tensorflow 2", "tf", "keras"],
+    "related_skills": ["Python", "Machine Learning", "Deep Learning"],
+    "infer_if_present": ["Python", "Machine Learning"]
+  },
+  "PyTorch": {
+    "category": "ML Framework",
+    "aliases": ["torch", "pytorch lightning"],
+    "related_skills": ["Python", "Machine Learning", "Deep Learning"],
+    "infer_if_present": ["Python", "Machine Learning"]
+  },
+  "Pandas": {
+    "category": "Data Science",
+    "aliases": ["pandas dataframe"],
+    "related_skills": ["Python", "NumPy"],
+    "infer_if_present": ["Python"]
+  },
+  "NumPy": {
+    "category": "Data Science",
+    "aliases": ["numpy"],
+    "related_skills": ["Python", "Pandas"],
+    "infer_if_present": ["Python"]
+  },
+  "scikit-learn": {
+    "category": "ML Framework",
+    "aliases": ["sklearn", "scikit learn"],
+    "related_skills": ["Python", "Machine Learning"],
+    "infer_if_present": ["Python", "Machine Learning"]
+  },
+  "NLP": {
+    "category": "Data Science",
+    "aliases": ["natural language processing", "text mining", "nlp processing"],
+    "related_skills": ["Python", "Machine Learning", "spaCy", "NLTK"],
+    "infer_if_present": ["Machine Learning"]
+  },
+  "REST API": {
+    "category": "Architecture",
+    "aliases": ["restful api", "rest apis", "web api", "api development", "restful"],
+    "related_skills": ["FastAPI", "Django", "Flask", "Node.js"],
+    "infer_if_present": []
+  },
+  "GraphQL": {
+    "category": "Architecture",
+    "aliases": ["graphql api"],
+    "related_skills": ["REST API", "Node.js"],
+    "infer_if_present": []
+  },
+  "Microservices": {
+    "category": "Architecture",
+    "aliases": ["micro services", "microservice architecture", "service mesh"],
+    "related_skills": ["Docker", "Kubernetes", "REST API"],
+    "infer_if_present": ["Docker"]
+  },
+  "Linux": {
+    "category": "Operating System",
+    "aliases": ["ubuntu", "debian", "centos", "rhel", "unix", "bash", "shell scripting"],
+    "related_skills": ["Docker", "SSH"],
+    "infer_if_present": []
+  },
+  "Agile": {
+    "category": "Methodology",
+    "aliases": ["scrum", "kanban", "agile methodology", "sprint", "jira"],
+    "related_skills": [],
+    "infer_if_present": []
+  },
+  "HTML": {
+    "category": "Frontend",
+    "aliases": ["html5", "html 5"],
+    "related_skills": ["CSS", "JavaScript"],
+    "infer_if_present": []
+  },
+  "CSS": {
+    "category": "Frontend",
+    "aliases": ["css3", "css 3", "sass", "scss", "less", "tailwind", "tailwindcss"],
+    "related_skills": ["HTML", "JavaScript"],
+    "infer_if_present": []
+  },
+  "Streamlit": {
+    "category": "Python Framework",
+    "aliases": [],
+    "related_skills": ["Python", "Pandas", "Data Science"],
+    "infer_if_present": ["Python"]
+  },
+  "SQLAlchemy": {
+    "category": "ORM",
+    "aliases": ["sqlalchemy orm"],
+    "related_skills": ["Python", "PostgreSQL"],
+    "infer_if_present": ["Python"]
+  },
+  "Celery": {
+    "category": "Task Queue",
+    "aliases": ["celery worker", "celery beat"],
+    "related_skills": ["Redis", "Python"],
+    "infer_if_present": ["Python", "Redis"]
+  },
+  "Terraform": {
+    "category": "Infrastructure",
+    "aliases": ["terraform iac"],
+    "related_skills": ["AWS", "GCP", "Azure", "Docker"],
+    "infer_if_present": []
+  },
+  "Ansible": {
+    "category": "Infrastructure",
+    "aliases": ["ansible playbook"],
+    "related_skills": ["Linux", "CI/CD"],
+    "infer_if_present": []
+  },
+  "Spark": {
+    "category": "Data Engineering",
+    "aliases": ["apache spark", "pyspark"],
+    "related_skills": ["Python", "Scala", "Hadoop"],
+    "infer_if_present": []
+  },
+  "Kafka": {
+    "category": "Data Engineering",
+    "aliases": ["apache kafka", "kafka streams"],
+    "related_skills": ["Microservices", "Spark"],
+    "infer_if_present": []
+  },
+  "Tableau": {
+    "category": "Data Visualization",
+    "aliases": [],
+    "related_skills": ["SQL", "Data Science"],
+    "infer_if_present": []
+  },
+  "Power BI": {
+    "category": "Data Visualization",
+    "aliases": ["powerbi", "power bi desktop"],
+    "related_skills": ["SQL", "Data Science"],
+    "infer_if_present": []
+  }
+}
