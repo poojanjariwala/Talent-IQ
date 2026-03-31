@@ -48,9 +48,12 @@ class CandidateRepository:
         return candidate
 
     async def update_parsed_data(self, candidate: Candidate, parsed: dict) -> Candidate:
+        # Securely update only valid model columns
+        allowed_keys = {c.key for c in Candidate.__table__.columns}
         for field, value in parsed.items():
-            if hasattr(candidate, field):
+            if field in allowed_keys and value is not None:
                 setattr(candidate, field, value)
+        
         await self.db.flush()
         await self.db.refresh(candidate)
         return candidate

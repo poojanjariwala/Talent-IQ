@@ -59,21 +59,25 @@ async def upload_resumes(
 
     results = []
     for f in files:
-        try:
-            content = await f.read()
-            raw_text = clean_text(extract_text(f.filename, content))
-            result = await process_resume(
-                db, 
-                raw_text, 
-                job_id, 
-                recruiter.id, 
-                f.filename,
-                resume_bytes=content,
-                resume_mime=f.content_type
-            )
-            results.append({"filename": f.filename, **result})
-        except Exception as e:
-            results.append({"filename": f.filename, "status": "failed", "error": str(e)})
+        # Use nested transaction (savepoint) to isolate EACH file.
+        # If one fails, the session remains healthy for the next.
+        async with db.begin_nested():
+            try:
+                content = await f.read()
+                raw_text = clean_text(extract_text(f.filename, content))
+                result = await process_resume(
+                    db, 
+                    raw_text, 
+                    job_id, 
+                    recruiter.id, 
+                    f.filename,
+                    resume_bytes=content,
+                    resume_mime=f.content_type
+                )
+                results.append({"filename": f.filename, **result})
+            except Exception as e:
+                # Rollback this sub-transaction (automatic by begin_nested context manager)
+                results.append({"filename": f.filename, "status": "failed", "error": str(e)})
 
     return {"processed": len(results), "results": results}
 

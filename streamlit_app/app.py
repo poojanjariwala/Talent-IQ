@@ -1,5 +1,10 @@
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env if present
+load_dotenv()
+
 # Fix for Streamlit Cloud module path
 sys.path.append(os.getcwd())
 

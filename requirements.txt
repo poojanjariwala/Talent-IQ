@@ -4,3 +4,4 @@ pandas==2.1.4
 plotly==5.18.0
 extra-streamlit-components==0.1.70
 requests==2.31.0
+python-dotenv==1.0.0
