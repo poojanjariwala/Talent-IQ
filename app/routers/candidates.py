@@ -72,6 +72,7 @@ async def upload_resumes(
                     resume_bytes=content,
                     resume_mime=mime
                 )
+                await db.commit()
             except Exception as e:
                 print(f"ERROR: Background processing failed for {filename}: {e}")
 
