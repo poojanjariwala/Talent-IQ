@@ -1,3 +1,8 @@
+import os
+import sys
+# Fix for Streamlit Cloud module path
+sys.path.append(os.getcwd())
+
 import streamlit as st
 from streamlit_app.state import init_state, logout, navigate_to
 from streamlit_app.views import landing, dashboard, job_creation, resume_upload, candidate_review, bulk_email, interview_scheduler
